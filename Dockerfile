@@ -4,10 +4,9 @@ MAINTAINER frenchbeard <frenchBeardSec@gmail.com>
 
 RUN yum install -y postgresql-server
 
-ADD pg_setup    /pg_setup
-ADD pg_run      /pg_run
-RUN chmod 755   /pg_setup
-RUN chmod 755   /pg_run
+ADD pg_setup.sh    /pg_setup
+ADD pg_run.sh      /pg_run
+RUN chmod 755   /pg_run /pg_setup
 RUN /pg_setup
 
 VOLUME ["/run/postgresql"]
